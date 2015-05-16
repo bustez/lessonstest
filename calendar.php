@@ -33,14 +33,10 @@ echo `clear`;
     echo "\r\n";
     echo $lastDayMonth;
     */
-    echo '                   ';
     echo '   ' . date("m") /*$months[$serialMonth]*/ . '      ' . $serialYear;
     echo "\n";
-    echo '                   ';
     foreach ($serialWeeks as $day) {
-
         echo $day . ' ';
-
     }
     echo "\n";
     /**
@@ -49,8 +45,6 @@ echo `clear`;
      *
      *
      */
-    echo '                   ';
-
     if ($firstDayMonth == 7) {
         echo '                  ';
     } elseif ($firstDayMonth == 6) {
@@ -66,14 +60,12 @@ echo `clear`;
     } else {
         echo '';
     }
-
   /**
    *
    *первая строка
    *
    *
    */
-
     $Day = 1;
     if ((int)$firstDayMonth != 1) {
         for ($i = (int)$firstDayMonth; $i <= 7; $i++) {
@@ -92,12 +84,10 @@ echo `clear`;
      *остальные строки
      *
      */
-echo '                   ';
     $str = 0;
     for ($i = $Day; $i <= $numberDaysMonth; $i++) {
         if ($i < 10) {
             if ($i == (int)$serialDay) {
-                echo '                   ';
                 echo "\033[30;47m $i\033[0m" . ' ';    //подсветить
             } else {
                 echo ' ' . $i . ' ';
@@ -109,6 +99,7 @@ echo '                   ';
                 echo $i . ' ';
             }
         }
+
         ++$str;
 
         if ($str == 7) {
